@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: green;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h1 {
+    color: white;
+    margin-left: 15%;
+    padding-right: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-left: 15%;
+}
+
+input {
+    margin-left: 15%;
+    padding: 7px 0;
+    border-radius: 5%;
+}
+
+button {
+    background-color: #232323;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 15%;
+}
+
+p {
+    border: 1px solid;
+    border-radius: 5px;
+    padding:  10px ;
+    margin-top: 0;
+}
+
+.container {
+    padding-right: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.search-input {
+    text-align: center;
+    margin-left: 65%;
+}
+
+span {
+    background-color: red;
+}
