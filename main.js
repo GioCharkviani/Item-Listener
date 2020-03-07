@@ -1,26 +1,38 @@
 var textInput = document.querySelector(".input-item");
 var textButton = document.querySelector("button");
-var textItems = document.querySelectorAll("p");
+var textItems = document.querySelectorAll("li");
 var itemsList = document.getElementById("itemsList");
-var delItem = document.querySelectorAll("span");
-
+var delItem = document.querySelectorAll(".remove-li");
 
 textButton.addEventListener("click", function() {
     addItem();
 });
 
 function addItem() {
-    var p = document.createElement("p");
+    var li = document.createElement("li");
+    var img = document.createElement("img");
     var newText = textInput.value;
-    p.innerHTML = newText + " <span>X</span>"
-    itemsList.appendChild(p);
-    setNewFor();
-}
-
-function setNewFor() {
-    for(var i = 0; i < document.querySelectorAll("span").length; i++) {
-        document.querySelectorAll("span")[i].addEventListener("click", function() {
-            console.log(this);
-        });
+    img.classList.add("remove-li");
+    img.src = "./icons/remove.svg";
+    img.alt = "remove";
+    if(newText.length > 0) {
+        li.innerHTML = newText;
+        li.appendChild(img);
+        itemsList.appendChild(li);
+        textInput.value = "";
+        var delItem = document.querySelectorAll(".remove-li");
+        setNewFor(delItem);
     }
 }
+
+function setNewFor(delItem) {
+    for(let i = 0; i < delItem.length; i++) {
+        delItem[i].addEventListener("click", deleteFunc);
+    }
+}
+
+function deleteFunc() {
+    this.parentElement.remove();
+}
+
+setNewFor(delItem);
